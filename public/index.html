@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>Chute</title>
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="vendors/materialize/css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="css/main.css"/>
+	
+    <script src="https://fb.me/react-0.13.0.js"></script>
+	<script src="https://fb.me/JSXTransformer-0.13.0.js"></script>
+
+</head>
+<body>
+
+
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">
+				<img src="/img/nike.png" alt>
+			</a>
+			<div class="left">
+					<a href="#" class="btn">WATCH</a>
+					<a href="#" class="btn">LEARN</a>
+					<a href="#" class="btn">ENCHANT</a>
+			</div>
+			<div class="right">
+				<a href="#" class="btn-flat">SIGN IN</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="slider">
+		<ul class="slides">
+			<li class="container">
+				<div class="row">
+					<div class="col s6">
+						<img class="center-align" id="slideLogo" src="/img/logo.png">
+					</div>
+					<div class="col s6 center-align">
+						<h2>CHANT IT UP</h2>
+						<span>Sing upload and mix.</span>
+						<span>Show'ew what you're made of</span>
+						<div class="horizontalButtonGrid">
+							<a class="btn-large" href="#">SUBMIT YOUR VIDEO</a>
+							<a class="btn-large" href="#">LEARN MORE</a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="card center-align" >
+		<h2>GIVE OUR NATIONAL TEAM A VOICE</h2>
+		<h4>Collaboratively create our new chants mixing  and matching exis</h4>
+	</div>
+
+	<div id="gallery">
+	</div>
+
+
+	<div class="card">
+		<div class="row">
+			<div class="col s4 itemCard">
+				<a href="#" class="center-align">
+					<img src="img/talk.png" class="img-center"/>
+					<h4>Hey Ho, Let's Go</h4>
+					<span>Login using your favorite social media site and upload your video singing or playing any rhythm. Or choose a video from your database.</span>
+				</a>
+			</div>
+			<div class="col s4 itemCard">
+				<a href="#" class="center-align">
+					<img src="img/voice.png" class="img-center"/>
+					<h4>ENCHANT</h4>
+					<span>Create your own unique chant choosing the voice, rhythm and effects</span>
+				</a>
+			</div>
+			<div class="col s4 itemCard">
+				<a href="#" class="center-align">
+					<img src="img/like.png" class="img-center"/>
+					<h4>Vote</h4>
+					<span>Now you're in the competition for the best brazilian team chant. The most voted will be the one of the official chant for brazilian fans.</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="vendors/materialize/js/materialize.min.js"></script>
+
+	<script type="text/jsx" src="./Components/Gallery/Gallery.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/ModalItem.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/GalleryItemInfo.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/GalleryItem.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/LayoutSelect.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/LayoutSelectItem.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/TagFilter.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/TagFilterItem.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/InputFilter.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/LoadMoreButton.React.js"></script>
+	<script type="text/jsx" src="./Components/Gallery/Modal.React.js"></script>
+	<script type="text/javascript" src="js/mockup.js"></script>
+	<script type="text/jsx">
+		/** @jsx React.DOM **/
+
+		React.render(<Gallery items= {items} maxPerPage="12"/>, document.getElementById("gallery"));
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+	    	$('.slider').slider();
+    		$('.materialboxed').materialbox();
+	    });
+	</script>
+
+</body>
+</html>

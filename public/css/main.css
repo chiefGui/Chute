@@ -1,0 +1,42 @@
+.play_hover {
+	position: absolute;
+	top: 22%;
+	left: 38%;
+	opacity:0;
+}
+.btn-flat {
+	padding: 0 1rem;
+}
+.nav-wrapper .left{
+	margin-left: 100px;
+}
+.brand-logo img{
+	margin-left: 25px;
+}
+.modal {
+	max-height: 100%;
+	overflow-y: visible;
+
+}
+.modal i.large {
+	font-size: 6rem;
+	top: 50%;
+	margin-top: -0.8em;
+	position: absolute;
+	margin-left: -18px;
+	margin-right: 0px;
+}
+.modal .row .col.s10 {
+	margin-left: 70px;
+}
+#slideLogo {
+	width: 400px;
+	margin-left: 50px;
+}
+.img-center {
+	margin-left: 35%;
+}
+.little-card i{
+	top: 8%;
+	left: 30%;
+}
