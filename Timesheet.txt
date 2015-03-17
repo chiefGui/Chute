@@ -1,0 +1,12 @@
+17/03
+	- 20:00 - 														
+	- 20:10 - config and install node, express and React			- 1
+	- 21:00 - Conversion of PSD to HTML/CSS							- 5
+	- 21:30 - Investigate and Architecture of React components		- 3
+	- 22:00 - create Gallery Item									- 2
+	- 22:30 - create Gallery List									- 2
+	- 23:00 - create Filters by Tag and Input Search				- 3
+	- 23:30 - create other two layouts to Gallery					- 1
+18/03
+	- 00:00 - create Modal to view Videos							- 3
+	- 01:00 - tests and layout adjustments							- 2
