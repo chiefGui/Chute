@@ -6,7 +6,7 @@ var TagFilterItem = React.createClass({
 	},
 	render : function() {
 		return(
-			<a href="#" className="btn-flat" onClick={this.onClick}>{this.props.tag}</a>
+			<li><a href="#nike" onClick={this.onClick}>{this.props.tag}</a></li>
 		);
 	}
 })

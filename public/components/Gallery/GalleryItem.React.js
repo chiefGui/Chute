@@ -2,56 +2,37 @@
 var GalleryItem = React.createClass({
 	getInitialState : function() {
 		return {
-			hover: 0
+			exists: false
 		};
 	},
-	getCardClass : function(type) {
-		switch(type){
-			case "simple" :
-				return "col s3 card"
-			case "mozaic" :
-				return "col s2 card little-card"
-			case "list" :
-				return "col s12 card"
-		}
-	},
-	getImageClass : function(type) {
-		switch(type){
-			case "simple" :
-			case "mozaic" :
-				return "col s12 card-image"
-			case "list" :
-				return "col s3 card-image"
-		}
-	},
 
-	onMouseEnter : function(){
-		this.setState({hover:1});
-	},
-	onMouseLeave : function(){
-		this.setState({hover:0});
-	},
-	onClick: function(){
-		$("#galleryModal").openModal();
+	checkImageExists: function(src, parent) {
+		var nImg = document.createElement('img');
+
+		nImg.onload = function() {
+			parent.setState({exists: true});
+		}
+
+		nImg.src = src;
+
 	},
 
 
 
 	render: function() {
-		var youtube = "http://img.youtube.com/vi/" + this.props.item.youtube + "/0.jpg";
-		var hoverStyle = {
-			opacity: this.state.hover
-		};
-		var cardClass = this.getCardClass(this.props.galleryType);
-		var imageClass = this.getImageClass(this.props.galleryType);
-
-		return(   
-         	<div className={cardClass} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onClick={this.onClick}>
-				<div className={imageClass}>
-					<img src={youtube}><i className="play_hover medium mdi-av-play-circle-outline" style={hoverStyle}></i></img>
-				</div>
-				<GalleryItemInfo item={this.props.item} />
-			</div>
-		)
+		if(this.state.exists) {
+			return(   
+				<li className="col-xs-12 col-sm-4 col-md-3">
+					<div className="media-box">
+						<a href={this.props.item.source.source_url} data-featherlight-gallery data-featherlight-filter="image">
+							<img className="img-responsive" src={this.props.item.source.source_url} alt="Thumbnail" />
+							<img src="images/zoom.png" className="img-responsive zoom" />
+						</a>
+					</div>
+				</li>
+			)
+		}
+		this.checkImageExists(this.props.item.source.source_url, this);
+		return( null )		
 	}
 })
