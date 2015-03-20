@@ -1,5 +1,5 @@
 /** @jsx React.DOM **/
-var Gallery = React.createClass({
+var Gallery = React.createClass({displayName: "Gallery",
 	
 	getInitialState: function() {
 		return {
@@ -86,32 +86,32 @@ var Gallery = React.createClass({
 				return null;
 			}
 			return (
-				<GalleryItem item={item} galleryType={type} />
+				React.createElement(GalleryItem, {item: item, galleryType: type})
 				);
 		});
 		return(
-			<div>
-				<div className="container-fluid">
-					<div className="row" style={{padding: "20px"}}>
-						<TagFilter onTagSelected={this.onTagSelected} onMostPopularSelected={this.onMostPopularSelected} />
-				 		<InputFilter onInputFilter={this.onInputFilter} value={this.state.tagInputFilter}/>
-					</div>
-				</div>
+			React.createElement("div", null, 
+				React.createElement("div", {className: "container-fluid"}, 
+					React.createElement("div", {className: "row", style: {padding: "20px"}}, 
+						React.createElement(TagFilter, {onTagSelected: this.onTagSelected, onMostPopularSelected: this.onMostPopularSelected}), 
+				 		React.createElement(InputFilter, {onInputFilter: this.onInputFilter, value: this.state.tagInputFilter})
+					)
+				), 
 
-				<div className="container-fluid">
-					<div className="row">
-						<ul className="media-list clearfix" >
-							{itemsFill}
-						</ul>
-					</div>
+				React.createElement("div", {className: "container-fluid"}, 
+					React.createElement("div", {className: "row"}, 
+						React.createElement("ul", {className: "media-list clearfix"}, 
+							itemsFill
+						)
+					), 
 					
-					<div className="row" >
-						<div className="col-xs-12">
-							<a href="#nike" className="thm-btn-auto" onClick={this.onLoadMore}>Load more</a>
-						</div>
-					</div>
-				</div>
-			</div>
+					React.createElement("div", {className: "row"}, 
+						React.createElement("div", {className: "col-xs-12"}, 
+							React.createElement("a", {href: "#nike", className: "thm-btn-auto", onClick: this.onLoadMore}, "Load more")
+						)
+					)
+				)
+			)
 		);
 	}
 })
