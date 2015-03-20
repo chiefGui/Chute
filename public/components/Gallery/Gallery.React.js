@@ -29,7 +29,7 @@ var Gallery = React.createClass({
 
     componentDidMount: function() {
     	if(this.state.items.length <= 0) {
-			var url = "http://api.getchute.com/v2/albums/aus6kwrg/assets?oauth_bearer=98d95c4e1c349ba369ee2231d544cade9ee40a9e0f610fb6ccc08af969204b49&per_page=12";
+			var url = "https://api.getchute.com/v2/albums/aus6kwrg/assets?oauth_bearer=98d95c4e1c349ba369ee2231d544cade9ee40a9e0f610fb6ccc08af969204b49&per_page=12";
 			this.loadItems(url);
     	}
     },
